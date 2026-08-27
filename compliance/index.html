@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -8,264 +8,93 @@
 <link rel="canonical" href="https://staffbook.co.uk/compliance/">
 <meta property="og:title" content="How Staffbook holds and protects staff data">
 <meta property="og:description" content="How Staffbook holds and protects staff compliance data, for the person who asks how it is built before they ask what it costs.">
-<meta property="og:type" content="website">
 <meta property="og:url" content="https://staffbook.co.uk/compliance/">
-<meta property="og:image" content="https://staffbook.co.uk/img/og.png">
-<meta property="og:site_name" content="Staffbook">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/fonts.css">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="How Staffbook holds and protects staff data">
+<link rel="icon" type="image/svg+xml" href="/brand/staffbook-favicon.svg">
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
-/* =============================================================================
-   The detailed version: the page for the person who asks how Staffbook is built
-   before they ask what it costs. Same light system as the front page and the
-   product, because a trust page in a different outfit reads as a costume.
-   ============================================================================= */
-:root{
-  --bg:#f5f7f9; --surface:#ffffff; --ink:#12283c; --ink-2:#42505e; --ink-3:#5d6a77;
-  --line:#dfe5ea; --accent:#1c3d5a; --accent-deep:#14304a;
-  --ease:cubic-bezier(0.32,0.72,0,1);
-}
-*{margin:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);
-  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,sans-serif;
-  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.02em}
-a{color:inherit}
-.wrap{max-width:880px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
-
-.nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:40;width:max-content;
-  display:flex;align-items:center;gap:6px;padding:8px 10px 8px 16px;
-  background:rgba(255,255,255,.82);backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border:1px solid rgba(13,22,32,.08);border-radius:999px;
-  box-shadow:0 12px 40px rgba(13,22,32,.10)}
-.nav .brand{display:flex;align-items:center;gap:10px;margin-right:10px;white-space:nowrap;
-  font-family:Archivo;font-weight:700;font-size:17px;text-decoration:none}
-.nav .brand svg{width:22px;height:22px}
-.nav a.cta{font-size:13.5px;font-weight:600;color:#fff;background:var(--accent);white-space:nowrap;
-  text-decoration:none;padding:9px 16px;border-radius:999px;margin-left:6px;
-  transition:background-color .3s var(--ease)}
-.nav a.cta:hover{background:var(--accent-deep)}
-
-header{padding:132px 0 24px}
-h1{font-size:clamp(30px,3.4vw,44px);line-height:1.08;text-wrap:balance}
-.lede{margin-top:20px;font-size:17.5px;color:var(--ink-2);max-width:58ch}
-.lede a{color:var(--accent);font-weight:600}
-
-section{padding:34px 0}
-h2{font-size:clamp(21px,2.4vw,27px);margin-bottom:6px}
-.since{font-size:14px;color:var(--ink-3);margin-bottom:18px}
-
-.row{border-top:1px solid var(--line);padding:20px 0;display:grid;
-  grid-template-columns:minmax(180px,240px) 1fr;gap:10px 28px}
-.row:last-of-type{border-bottom:1px solid var(--line)}
-.row h3{font-size:16.5px;font-weight:600}
-.row p{font-size:15px;color:var(--ink-2);max-width:60ch}
-.row p+p{margin-top:8px}
-@media (max-width:640px){.row{grid-template-columns:1fr;gap:4px}}
-
-.plain{background:var(--surface);border:1px solid var(--line);border-radius:16px;
-  padding:24px 26px;font-size:15px;color:var(--ink-2)}
-.plain b{color:var(--ink)}
-.plain p+p{margin-top:10px}
-
-.cta-band{margin:44px 0 0;padding:44px 0 84px}
-.btn{display:inline-flex;align-items:center;gap:12px;text-decoration:none;
-  font-weight:600;font-size:15.5px;border-radius:999px;padding:13px 24px;
-  background:var(--accent);color:#fff;
-  transition:background-color .35s var(--ease)}
-.btn:hover{background:var(--accent-deep)}
-.beneath{margin-top:18px;font-size:14px;color:var(--ink-3)}
-
-footer{border-top:1px solid var(--line);padding:34px 0 44px}
-footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-footer p{font-size:14px;color:var(--ink-3)}
-footer a{text-decoration:underline;text-underline-offset:3px}
+  html,body{margin:0;padding:0;background:#F6F4EC}
+  body{font-family:'Instrument Sans','Helvetica Neue',sans-serif;color:#21201A;-webkit-font-smoothing:antialiased}
+  a{color:#0D5C45;text-decoration:none}
+  a:hover{color:#0A4735}
+  ::selection{background:#DCEAD9}
+  .serif{font-family:'Newsreader',Georgia,serif;font-weight:500}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .wrap{max-width:760px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+  .navbar{position:sticky;top:0;z-index:60;background:rgba(246,244,236,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(216,212,194,.55)}
+  .navin{display:flex;align-items:center;justify-content:space-between;max-width:760px;margin:0 auto;padding:14px clamp(20px,4vw,40px)}
+  .item{padding:16px 0;border-bottom:1px solid #E5E1D3}
+  .item:last-child{border-bottom:none}
+  .item b{display:block;font-size:16px}
+  .item p{margin:5px 0 0;font-size:14.5px;color:#5C594B;line-height:1.6;text-wrap:pretty}
+  h2{font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:26px;letter-spacing:-.015em;margin:52px 0 4px}
+  .sub{font-size:14px;color:#6E6B57;margin:0 0 8px;line-height:1.6}
 </style>
 </head>
 <body>
+<div class="navbar">
+  <nav class="navin" aria-label="Main">
+    <a href="/" style="font-size:20px;font-weight:700;letter-spacing:-.03em;color:#21201A;display:flex;align-items:center;gap:8px"><img src="/brand/staffbook-mark.svg" width="20" height="20" alt="">staffbook</a>
+    <a href="/#cta" style="background:#0D5C45;color:#F6F4EC;font-weight:600;border-radius:999px;font-size:14px;padding:9px 18px">Book a look</a>
+  </nav>
+</div>
 
-<nav class="nav" aria-label="Main">
-  <a class="brand" href="/">
-    <svg viewBox="0 0 48 48" fill="none" stroke="#1c3d5a" stroke-width="7" aria-hidden="true">
-      <path d="M19 5 H43 V29 a14 14 0 0 1 -14 14 H19 a14 14 0 0 1 -14 -14 V19 a14 14 0 0 1 14 -14 Z"/>
-    </svg>
-    Staffbook
-  </a>
-  <a class="cta" href="mailto:colby@staffbook.co.uk?subject=A%20look%20at%20Staffbook">Book a look</a>
-</nav>
+<main class="wrap" style="padding-top:64px;padding-bottom:90px">
+  <p class="mono" style="font-size:12px;letter-spacing:.09em;color:#6E6B57;margin:0">SECURITY AND DATA</p>
+  <h1 class="serif" style="font-size:clamp(34px,5vw,48px);line-height:1.05;letter-spacing:-.02em;margin:14px 0 0">The detailed version.</h1>
+  <p style="font-size:16.5px;color:#5C594B;line-height:1.65;margin:20px 0 0;text-wrap:pretty">For the person who asks how it is built before they ask what it costs. What Staffbook holds, what it refuses to hold, and how the system that keeps your staff records is itself kept. The short version lives on the <a href="/" style="font-weight:600;border-bottom:1px solid #0D5C45">front page</a>.</p>
 
-<header>
-  <div class="wrap">
-    <h1>The detailed version.</h1>
-    <p class="lede">For the person who asks how it is built before they ask
-      what it costs. What Staffbook holds, what it refuses to hold, and how the
-      system that keeps your staff records is itself kept. The short version
-      lives on the <a href="/">front page</a>.</p>
+  <h2>What it holds, and what it never will</h2>
+  <p class="sub">The boundaries are structural. They are not settings, and no future update quietly moves them.</p>
+  <div>
+    <div class="item"><b>Staff and premises only</b><p>Training and DBS renewals, the Schedule 2 recruitment checklist, supervisions, rotas, the home&rsquo;s own checks, tasks and the audit trail. The working file for the people and the building.</p></div>
+    <div class="item"><b>No child records</b><p>There is no child record in Staffbook and no field intended for one. It does not replace a care records system and does not try to. That is a boundary, and it is also the point: trying Staffbook never puts a young person&rsquo;s data anywhere new.</p></div>
+    <div class="item"><b>No DBS content</b><p>Certificate number, dates and status. There is nowhere to type what a disclosure says, on purpose.</p></div>
+    <div class="item"><b>Sealed records</b><p>Disciplinary and safeguarding records about staff open to the Responsible Individual only, behind a fresh password check, and every open is written to the audit trail.</p></div>
+    <div class="item"><b>Pay stays private</b><p>A support worker sees their own record and the published rota. Wages are visible to the Responsible Individual and nobody else, enforced in the database rather than promised in a policy.</p></div>
   </div>
-</header>
 
-<section>
-  <div class="wrap">
-    <h2>What it holds, and what it never will</h2>
-    <p class="since">The boundaries are structural. They are not settings, and
-      no future update quietly moves them.</p>
-    <div class="row">
-      <h3>Staff and premises only</h3>
-      <p>Training and DBS renewals, the Schedule 2 recruitment checklist,
-        supervisions, rotas, the home&rsquo;s own checks, tasks and the audit
-        trail. The working file for the people and the building.</p>
-    </div>
-    <div class="row">
-      <h3>No child records</h3>
-      <p>There is no child record in Staffbook and no field intended for one. It
-        does not replace a care records system and does not try to. That is a
-        boundary, and it is also the point: trying Staffbook never puts a young
-        person&rsquo;s data anywhere new.</p>
-    </div>
-    <div class="row">
-      <h3>No DBS content</h3>
-      <p>Certificate number, dates and status. There is nowhere to type what a
-        disclosure says, on purpose.</p>
-    </div>
-    <div class="row">
-      <h3>Sealed records</h3>
-      <p>Disciplinary and safeguarding records about staff open to the
-        Responsible Individual only, behind a fresh password check, and every
-        open is written to the audit trail.</p>
-    </div>
-    <div class="row">
-      <h3>Pay stays private</h3>
-      <p>A support worker sees their own record and the published rota. Wages
-        are visible to the Responsible Individual and nobody else, enforced in
-        the database rather than promised in a policy.</p>
-    </div>
+  <h2>How it is protected</h2>
+  <p class="sub">Staff records are the sensitive kind. The protections are in the database and the infrastructure, where they cannot be forgotten by a screen.</p>
+  <div>
+    <div class="item"><b>One provider cannot see another</b><p>Every table in the database carries row level security scoped to your organisation. The screens are a convenience; the database is the control. Even a bug in a page cannot cross the boundary, because the boundary is not in the pages.</p></div>
+    <div class="item"><b>Files are private by default</b><p>Certificates and documents live in private storage. Opening one issues a link that dies after sixty seconds, and the open is logged against the person who did it.</p></div>
+    <div class="item"><b>An audit trail nobody can edit</b><p>Append only. There is no edit and no delete, for anyone, including the owner of the organisation. That is what makes it worth showing an inspector.</p></div>
+    <div class="item"><b>Encrypted and locked down</b><p>Everything travels over HTTPS, enforced for a year at a time in the browser itself. The app cannot be framed inside another site, and nothing in it is allowed to appear in a search engine.</p></div>
+    <div class="item"><b>Backed up daily</b><p>The database is backed up every day on managed infrastructure, so a mistake is a restore rather than a rebuild.</p></div>
+    <div class="item"><b>Keys stay server side</b><p>No privileged key is ever sent to a browser. The scheduled jobs that send the Monday digest carry their own secret and can do nothing else.</p></div>
   </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <h2>How it is protected</h2>
-    <p class="since">Staff records are the sensitive kind. The protections are
-      in the database and the infrastructure, where they cannot be forgotten
-      by a screen.</p>
-    <div class="row">
-      <h3>One provider cannot see another</h3>
-      <p>Every table in the database carries row level security scoped to your
-        organisation. The screens are a convenience; the database is the
-        control. Even a bug in a page cannot cross the boundary, because the
-        boundary is not in the pages.</p>
-    </div>
-    <div class="row">
-      <h3>Files are private by default</h3>
-      <p>Certificates and documents live in private storage. Opening one
-        issues a link that dies after sixty seconds, and the open is logged
-        against the person who did it.</p>
-    </div>
-    <div class="row">
-      <h3>An audit trail nobody can edit</h3>
-      <p>Append only. There is no edit and no delete, for anyone, including
-        the owner of the organisation. That is what makes it worth showing an
-        inspector.</p>
-    </div>
-    <div class="row">
-      <h3>Encrypted and locked down</h3>
-      <p>Everything travels over HTTPS, enforced for a year at a time in the
-        browser itself. The app cannot be framed inside another site, and
-        nothing in it is allowed to appear in a search engine.</p>
-    </div>
-    <div class="row">
-      <h3>Backed up daily</h3>
-      <p>The database is backed up every day on managed infrastructure, so a
-        mistake is a restore rather than a rebuild.</p>
-    </div>
-    <div class="row">
-      <h3>Keys stay server side</h3>
-      <p>No privileged key is ever sent to a browser. The scheduled jobs that
-        send the Monday digest carry their own secret and can do nothing
-        else.</p>
-    </div>
+  <h2>Where it runs</h2>
+  <div>
+    <div class="item"><p style="margin-top:0">Staffbook runs on Vercel and Supabase, large managed platforms, and your data stays in the UK. Alert emails go through Resend from EU infrastructure. When you leave, your data is exported to you and deleted, in the same month you leave.</p></div>
+    <div class="item"><p style="margin-top:0">Staffbook is built and run by one person in Manchester, which means the person answering a data question is the person who wrote the code. Staffbook Ltd is registered in England and Wales, company no. 17402902. ICO registration: ZC227838. The plain-English version of what is held and why is the <a href="/privacy/" style="font-weight:600;border-bottom:1px solid #0D5C45">privacy notice</a>. Data questions go to <a href="mailto:colby@staffbook.co.uk">colby@staffbook.co.uk</a> and get answered by a person.</p></div>
   </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <h2>Where it runs</h2>
-    <div class="plain">
-      <p>Staffbook runs on <b>Vercel</b> and <b>Supabase</b>, the same managed
-        infrastructure used by banks and health services, with alert emails
-        sent through <b>Resend</b> from EU infrastructure. Your data is
-        exported to you and deleted when you leave, in the same month you
-        leave.</p>
-      <p>Staffbook is built and run by one person in Manchester, which means the
-        person answering a data question is the person who wrote the code.
-        Staffbook Ltd is registered in
-        England and Wales, company no. 17402902, ICO registration
-        reference ZC227838. The plain-English version of what is held and why is
-        the <a href="/privacy/">privacy notice</a>. Data questions go to
-        <b>colby@staffbook.co.uk</b> and get answered by a person.</p>
-    </div>
+  <h2>The things providers ask first</h2>
+  <div>
+    <div class="item"><b>Can staff see each other&rsquo;s records?</b><p>No. A support worker sees their own file, their own tasks and the published rota, and can record a premises check. Everything else needs a manager login, and the sealed records need the Responsible Individual.</p></div>
+    <div class="item"><b>What happens when we leave?</b><p>You can leave any month. Your data is exported to you in files a human can read, spreadsheets and the documents themselves, and then deleted.</p></div>
+    <div class="item"><b>What does an inspector actually get?</b><p>An evidence pack: one zip for a named person or the whole home, the spreadsheets plus the certificates, with a plain README. Generating it is itself logged, so the handover is on the record too.</p></div>
+    <div class="item"><b>Do we need training?</b><p>A manager is working in it the same afternoon. Support workers get a login, see their own list, and tick things off. If anything needs explaining, that is a defect, and you tell the person who can fix it.</p></div>
   </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <h2>The things providers ask first</h2>
-    <div class="row">
-      <h3>Can staff see each other&rsquo;s records?</h3>
-      <p>No. A support worker sees their own file, their own tasks and the
-        published rota, and can record a premises check. Everything else needs
-        a manager login, and the sealed records need the Responsible
-        Individual.</p>
-    </div>
-    <div class="row">
-      <h3>What happens when we leave?</h3>
-      <p>You can leave any month. Your data is exported to you in files a
-        human can read, spreadsheets and the documents themselves, and then
-        deleted.</p>
-    </div>
-    <div class="row">
-      <h3>What does an inspector actually get?</h3>
-      <p>An evidence pack: one zip for a named person or the whole home, the
-        spreadsheets plus the certificates, with a plain README. Generating it
-        is itself logged, so the handover is on the record too.</p>
-    </div>
-    <div class="row">
-      <h3>Do we need training?</h3>
-      <p>A manager is working in it the same afternoon. Support workers get a
-        login, see their own list, and tick things off. If anything needs
-        explaining, that is a defect, and you tell the person who can fix
-        it.</p>
-    </div>
+  <div class="ctacard" style="margin-top:44px;background:#0B3B2C;border-radius:18px;padding:30px 32px;color:#EDF1E6">
+    <p class="serif" style="font-size:22px;margin:0;line-height:1.35;color:#FBFAF5">Fifteen minutes, on a call, on a demo home with a year of records in it. If Staffbook does not obviously beat the spreadsheet you run today, keep the spreadsheet.</p>
+    <a href="/#cta" style="display:inline-block;margin-top:18px;background:#F6F4EC;color:#0B3B2C;font-weight:600;border-radius:999px;font-size:15px;padding:12px 24px">Book a look</a>
+    <a href="mailto:colby@staffbook.co.uk" style="display:inline-block;margin-top:18px;margin-left:14px;color:#B9CDB9;font-weight:600;font-size:15px">Or write to colby@staffbook.co.uk</a>
   </div>
-</section>
+</main>
 
-<section class="cta-band">
-  <div class="wrap">
-    <h2>Fifteen minutes, on the demo home</h2>
-    <p class="lede" style="margin-bottom:26px">Fifteen minutes, on a call, on
-      a demo home with a year of records in it. If Staffbook does not obviously
-      beat the spreadsheet you run today, keep the spreadsheet.</p>
-    <a class="btn" href="mailto:colby@staffbook.co.uk?subject=A%20look%20at%20Staffbook&body=I%20would%20like%20a%20look%20at%20Staffbook.%20My%20home%20is%20">Book a look</a>
-    <p class="beneath">Or write to colby@staffbook.co.uk.</p>
+<footer style="border-top:1px solid #D8D4C2">
+  <div style="max-width:760px;margin:0 auto;padding:28px clamp(20px,4vw,40px) 12px;font-size:13px;color:#6E6B57;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <span><b style="color:#21201A">staffbook</b> · Compliance software for children&rsquo;s homes</span>
+    <span><a href="/">Home</a> · <a href="/privacy/">Privacy</a> · <a href="mailto:colby@staffbook.co.uk">colby@staffbook.co.uk</a></span>
   </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <p>Staffbook. Compliance software for children&rsquo;s homes.<br>
-       Staffbook Ltd, registered in England and Wales, company no. 17402902.</p>
-    <p><a href="/">staffbook.co.uk</a> &nbsp;&middot;&nbsp;
-       <a href="https://app.staffbook.co.uk">Sign in</a> &nbsp;&middot;&nbsp;
-       <a href="mailto:colby@staffbook.co.uk">colby@staffbook.co.uk</a></p>
-  </div>
+  <div style="max-width:760px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 32px;font-size:12.5px;color:#6E6B57">Staffbook Ltd, registered in England and Wales, company no. 17402902 · 82A James Carter Road, Mildenhall IP28 7DE · ICO registration: ZC227838 · UK-hosted.</div>
 </footer>
-
 <script data-goatcounter="https://ordane.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
