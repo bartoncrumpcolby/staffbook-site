@@ -416,7 +416,7 @@
           </div>
           <div class="wgrid" style="display:grid;grid-template-columns:1.5fr 1fr;gap:12px;margin-top:12px">
             <div style="border:1px solid #EBEBE8;border-radius:12px;overflow:hidden;display:flex;flex-direction:column">
-              <div class="cardhead" style="display:flex;justify-content:space-between;align-items:baseline;padding:12px 16px;border-bottom:1px solid #F2F2EF"><span style="font-size:13px;font-weight:700">Chase these people first</span><span style="font-size:10.5px;color:#73757B">named, most overdue at the top</span></div>
+              <div class="cardhead" style="display:flex;justify-content:space-between;align-items:baseline;padding:12px 16px;border-bottom:1px solid #F2F2EF"><span style="font-size:13px;font-weight:700">Chase these people first</span></div>
               <div id="anim-grace" class="chaserow" style="display:flex;align-items:center;gap:11px;padding:12px 16px;border-bottom:1px solid #F2F2EF;background:transparent;transition:background .3s">
                 <span style="width:26px;height:26px;border-radius:50%;background:#F0F0ED;color:#54565B;font-weight:700;font-size:10px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0">GE</span>
                 <span style="font-size:12.5px;line-height:1.35"><strong>Grace Ellison</strong><br><span style="color:#73757B;font-size:11px">Deputy Manager · Alder Lodge</span></span>
@@ -453,7 +453,7 @@
                 <div style="display:flex;gap:8px;margin-top:7px;font-size:11.5px;color:#404247"><span style="width:6px;height:6px;border-radius:50%;background:#C77B27;margin-top:4px;flex-shrink:0"></span><span><strong>Supervision records</strong> · 2 overdue below</span></div>
               </div>
               <div style="border:1px solid #EBEBE8;border-radius:12px;padding:12px 16px 6px">
-                <div class="cardhead" style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:13px;font-weight:700">Expiring next</span><span style="font-size:10.5px;color:#73757B">by type</span></div>
+                <div class="cardhead" style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:13px;font-weight:700">Expiring next</span></div>
                 <div style="display:flex;flex-direction:column;margin-top:4px;font-size:12px">
                   <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #F2F2EF"><span>Training</span><span class="bad" style="font-size:10.5px;border:none;padding:2px 8px">◆ 2 expired</span></div>
                   <div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid #F2F2EF"><span>Supervisions</span><span class="bad" style="font-size:10.5px;border:none;padding:2px 8px">◆ 2 overdue</span></div>
@@ -465,7 +465,7 @@
             </div>
           </div>
           <div class="mockhomes" style="border:1px solid #EBEBE8;border-radius:12px;margin-top:12px;overflow:hidden">
-            <div style="display:flex;justify-content:space-between;align-items:baseline;padding:12px 16px;border-bottom:1px solid #F2F2EF"><span style="font-size:13px;font-weight:700">Readiness by home</span><span style="font-size:10.5px;color:#73757B">most to fix first</span></div>
+            <div style="display:flex;justify-content:space-between;align-items:baseline;padding:12px 16px;border-bottom:1px solid #F2F2EF"><span style="font-size:13px;font-weight:700">Readiness by home</span></div>
             <div style="display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:0 10px;align-items:center;padding:10px 16px 4px">
               <span></span>
               <span class="mono" style="text-align:center;font-size:9px;letter-spacing:.05em;color:#73757B">TRAINING</span>
@@ -626,7 +626,7 @@
                 <span class="ok" style="justify-self:start">in date</span>
                 <span class="ok" style="justify-self:start">in date</span>
               </div>
-              <div class="hintbox" style="margin-top:14px">Every expiry has a renewal date worked out: amber ahead of time, chased before it lapses.</div>
+              <div class="hintbox" style="margin-top:14px">Every expiry has a renewal date. It turns amber ahead of time and gets chased before it runs out.</div>
             </div>
           </div>
         </div></div>
@@ -657,7 +657,7 @@
               <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px"><span><strong>Priya Raman</strong> · last held 4 August</span><span class="ok">next due 21 Sept</span></div>
               <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px"><span><strong>Daniel Mercer</strong> · last held 12 June</span><span class="warn">due this week</span></div>
               <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px"><span><strong>Sam Ogden</strong> · last held 1 August</span><span class="ok">on pattern</span></div>
-              <div class="hintbox" style="margin-top:4px">Scheduled, recorded, evidenced. The pattern holds itself, and slipping shows up early.</div>
+              <div class="hintbox" style="margin-top:4px">Booked, recorded, evidenced. If the pattern slips, you see it early.</div>
             </div>
           </div>
         </div></div>
@@ -975,12 +975,12 @@
     show('head-not', false); show('head-fixed', true);
     show('pack-btn', false); show('pack-ready', true);
   };
-  const moveTo = (id) => {
+  const moveTo = (id, fx = 0.8, fy = 0.6) => {
     const t = document.getElementById(id);
     if (!root || !t || !cursor) return;
     const a = root.getBoundingClientRect(), b = t.getBoundingClientRect();
-    cursor.style.transform = 'translate(' + (b.left - a.left + b.width * 0.8) + 'px,' +
-      (b.top - a.top + b.height * 0.6) + 'px)';
+    cursor.style.transform = 'translate(' + (b.left - a.left + b.width * fx) + 'px,' +
+      (b.top - a.top + b.height * fy) + 'px)';
   };
   const clickFx = () => {
     const r = document.getElementById('anim-ripple');
@@ -1032,6 +1032,7 @@
   let staffStarted = false, staffDone = false;
   const staffEnd = () => {
     staffDone = true;
+    if (cursor) cursor.hidden = true;
     if (spRow) {
       spRow.style.transition = 'none';
       spRow.style.maxHeight = 'none'; spRow.style.opacity = '1';
@@ -1045,16 +1046,31 @@
     if (staffStarted) return;
     staffStarted = true;
     if (reduced) { staffEnd(); return; }
+    const useCursor = !!cursor && !smallScreen;
     const step = (t, fn) => setTimeout(fn, t);
-    step(800, () => { if (staffDone) return; if (spRow) {
+    if (useCursor) {
+      step(400, () => { if (staffDone) return;
+        const a = root.getBoundingClientRect();
+        cursor.style.transition = 'none';
+        cursor.style.transform = 'translate(' + Math.round(a.width * 0.72) + 'px,' +
+          Math.round(Math.min(a.height - 80, 430)) + 'px)';
+        void cursor.offsetWidth;
+        cursor.style.transition = 'transform 1.2s cubic-bezier(.45,.05,.2,1)';
+        cursor.hidden = false; });
+      step(650, () => { if (!staffDone) moveTo('sp-fire-bad', 0.3, 0.5); });
+      step(2000, () => { if (!staffDone) clickFx(); });
+    }
+    const o = useCursor ? 0 : -1500;
+    step(2450 + o, () => { if (staffDone) return;
+      show('sp-fire-bad', false); show('sp-fire-ok', true); });
+    step(3150 + o, () => { if (staffDone) return; if (spRow) {
       spRow.style.maxHeight = '52px'; spRow.style.paddingTop = '11px';
       spRow.style.paddingBottom = '11px'; spRow.style.opacity = '1'; } });
-    step(2100, () => { if (staffDone) return;
-      show('sp-fire-bad', false); show('sp-fire-ok', true); });
-    step(2950, () => { if (staffDone) return;
+    step(4050 + o, () => { if (staffDone) return;
       show('sp-pill-bad', false); show('sp-pill-ok', true);
       if (spRow) spRow.style.background = 'transparent';
-      staffDone = true; });
+      staffDone = true;
+      if (useCursor) setTimeout(() => { cursor.hidden = true; }, 600); });
   };
   if (root) {
     const sio = new IntersectionObserver((es) => {
