@@ -196,8 +196,9 @@
     .mocktop{flex-wrap:wrap;row-gap:8px}
     #anim-pack{margin-left:auto}
     /* a phone gets the short version of the mock: headline, tiles, the chase
-       list. The right-hand cards and the homes strip are desktop depth. */
-    .mockside,.mockhomes{display:none}
+       list. The right-hand cards and the homes strip are desktop depth.
+       !important because the column carries an inline display:flex. */
+    .mockside,.mockhomes{display:none !important}
     /* one mock is a taste, six is a scroll. Copy stays for every section. */
     .panel .panelmock{display:none}
     .panel[data-i="0"] .panelmock{display:block}
