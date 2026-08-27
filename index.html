@@ -43,7 +43,7 @@
   "url":"https://staffbook.co.uk/",
   "logo":{"@type":"ImageObject","url":"https://staffbook.co.uk/icon-512.png","width":512,"height":512},
   "foundingDate":"2026",
-  "email":"colby@staffbook.co.uk",
+  "email":"hello@staffbook.co.uk",
   "identifier":{"@type":"PropertyValue","name":"Companies House number","value":"17402902"},
   "address":{"@type":"PostalAddress","streetAddress":"82A James Carter Road","addressLocality":"Mildenhall","postalCode":"IP28 7DE","addressCountry":"GB"},
   "areaServed":"GB",
@@ -895,7 +895,7 @@
         <p style="font-size:15px;color:#5C594B;line-height:1.6;margin:12px 0 0">One dashboard across all of them: readiness per home, an RI view over the lot, priced per home.</p>
       </details>
     </div>
-    <p style="font-size:14.5px;color:#6E6B57;margin:24px 0 0;text-align:center">Anything else: ask on the call, or email <a href="mailto:colby@staffbook.co.uk">colby@staffbook.co.uk</a> and you&rsquo;ll get an answer from a person.</p>
+    <p style="font-size:14.5px;color:#6E6B57;margin:24px 0 0;text-align:center">Anything else: ask on the call, or email <a href="mailto:hello@staffbook.co.uk">hello@staffbook.co.uk</a> and you&rsquo;ll get an answer from a person.</p>
   </div>
 </section>
 
@@ -933,7 +933,7 @@
       <a href="resources/safer-recruitment-checklist.html" style="color:#5C594B">Safer recruitment checklist</a>
       <a href="https://app.staffbook.co.uk" style="color:#5C594B">Sign in</a>
       <a href="https://www.linkedin.com/company/staffbook-uk/" style="color:#5C594B">LinkedIn</a>
-      <a href="mailto:colby@staffbook.co.uk" style="color:#5C594B">colby@staffbook.co.uk</a>
+      <a href="mailto:hello@staffbook.co.uk" style="color:#5C594B">hello@staffbook.co.uk</a>
     </div>
   </div>
   <div style="max-width:1220px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 32px;font-size:12.5px;color:#6E6B57">Staffbook Ltd, registered in England and Wales, company no. 17402902 · 82A James Carter Road, Mildenhall IP28 7DE · ICO registration: ZC227838 · UK-hosted.</div>
@@ -1259,14 +1259,14 @@
         btn.disabled = false;
         btn.textContent = label;
         if (note) {
-          note.textContent = 'That did not send. Write to colby@staffbook.co.uk, or ';
+          note.textContent = 'That did not send. Write to hello@staffbook.co.uk, or ';
           const a = document.createElement('a');
-          a.href = 'mailto:colby@staffbook.co.uk?subject=' +
+          a.href = 'mailto:hello@staffbook.co.uk?subject=' +
             encodeURIComponent('A look at Staffbook') + '&body=' +
             encodeURIComponent('My email: ' + em + '\nMy home or group: \nA good time to call: ');
           a.textContent = 'open a prefilled email';
           note.append(a, '.');
-          navigator.clipboard?.writeText('colby@staffbook.co.uk')
+          navigator.clipboard?.writeText('hello@staffbook.co.uk')
             .then(() => { note.append(' The address is on your clipboard.'); })
             .catch(() => {});
         }
