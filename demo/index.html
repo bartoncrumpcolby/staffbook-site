@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A ninety second tour | Staffbook</title>
+<meta name="description" content="The staff compliance platform that keeps children's homes inspection ready. Ninety seconds, introduced by a serving Responsible Individual.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://staffbook.co.uk/demo/">
+<meta property="og:title" content="A ninety second tour of Staffbook">
+<meta property="og:description" content="The staff compliance platform that keeps you inspection ready.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://staffbook.co.uk/demo/">
+<meta property="og:image" content="https://staffbook.co.uk/demo/poster.png">
+<meta property="og:site_name" content="Staffbook">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+  *{box-sizing:border-box;margin:0}
+  body{font-family:'Instrument Sans','Helvetica Neue',sans-serif;color:#21201A;background:#F6F4EC;line-height:1.55}
+  .serif{font-family:'Newsreader',Georgia,serif;font-weight:500}
+  main{max-width:860px;margin:0 auto;padding:56px 24px 96px}
+  .eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#0D5C45;font-weight:700;margin-bottom:14px}
+  .madefor{display:none;font-size:14px;font-weight:700;color:#F6F4EC;background:#0B3B2C;border-radius:999px;padding:8px 18px;margin-bottom:18px}
+  h1{font-size:clamp(30px,5vw,46px);letter-spacing:-.02em;line-height:1.08;margin-bottom:14px}
+  .lede{font-size:17.5px;color:#4A4737;max-width:58ch;margin-bottom:28px}
+  .player{border-radius:18px;overflow:hidden;background:#0B3B2C;box-shadow:0 24px 60px rgba(11,59,44,.18);line-height:0}
+  .player video{width:100%;height:auto}
+  .after{margin-top:30px}
+  .after p{font-size:17px;color:#4A4737;margin-bottom:18px}
+  .btn{display:inline-block;font:inherit;font-size:16px;font-weight:600;background:#0D5C45;color:#F6F4EC;border:none;border-radius:999px;padding:14px 26px;cursor:pointer;text-decoration:none}
+  .btn:hover{background:#0A4735}
+  .btn.ghost{background:transparent;color:#0D5C45;border:1.5px solid #0D5C45}
+  .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .note{font-size:13px;color:#6E6B57;margin-top:12px}
+  .foot{margin-top:56px;font-size:13px;color:#6E6B57}
+  .foot a{color:#0D5C45}
+</style>
+</head>
+<body>
+<main>
+  <p class="madefor" id="madefor"></p>
+  <p class="eyebrow">A ninety second tour</p>
+  <h1 class="serif">The staff compliance platform that keeps you inspection ready.</h1>
+  <p class="lede">Introduced by a serving Responsible Individual with twenty years in children's homes. No forms, no sign-up, just the tour.</p>
+
+  <div class="player">
+    <video controls preload="metadata" poster="/demo/poster.png">
+      <source src="/demo/staffbook-demo.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="after">
+    <p>Setup is done for you, and your first month is free from the day your data is in. Monthly rolling, cancel any month, nothing paywalled.</p>
+    <div class="row">
+      <a class="btn" href="mailto:hello@staffbook.co.uk?subject=Book%20a%20call%20about%20Staffbook">Book a call</a>
+      <a class="btn ghost" href="/">See the whole site</a>
+    </div>
+    <p class="note">Email hello@staffbook.co.uk and you get an answer from a person, usually the founder.</p>
+  </div>
+
+  <p class="foot">Staffbook Ltd · <a href="/">staffbook.co.uk</a> · <a href="/privacy/">privacy</a> · No child records, ever, by design.</p>
+</main>
+<script>
+  // The email thumbnails link here with ?for=<org-slug>; the pill greets
+  // the organisation by name. Unknown or missing slugs just show the page.
+  (function () {
+    var slug = new URLSearchParams(location.search).get('for');
+    if (!slug) return;
+    fetch('/demo/orgs.json').then(function (r) { return r.json(); }).then(function (map) {
+      var name = map[slug];
+      if (!name) return;
+      var el = document.getElementById('madefor');
+      el.textContent = 'Made for ' + name;
+      el.style.display = 'inline-block';
+    }).catch(function () {});
+  })();
+  window.goatcounter = { path: function () { return location.pathname + location.search; } };
+</script>
+<script data-goatcounter="https://ordane.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
