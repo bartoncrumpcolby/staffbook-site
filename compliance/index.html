@@ -60,16 +60,19 @@
   <p class="sub">Staff records are the sensitive kind. The protections are in the database and the infrastructure, where they cannot be forgotten by a screen.</p>
   <div>
     <div class="item"><b>One provider cannot see another</b><p>Every table in the database carries row level security scoped to your organisation. The screens are a convenience; the database is the control. Even a bug in a page cannot cross the boundary, because the boundary is not in the pages.</p></div>
+    <div class="item"><b>The walls are tested, not trusted</b><p>An automated suite signs in as different providers and different roles and tries to read across the boundary: a support worker into manager screens, one organisation into another. A change does not ship unless every attempt fails.</p></div>
     <div class="item"><b>Files are private by default</b><p>Certificates and documents live in private storage. Opening one issues a link that dies after sixty seconds, and the open is logged against the person who did it.</p></div>
     <div class="item"><b>An audit trail nobody can edit</b><p>Append only. There is no edit and no delete, for anyone, including the owner of the organisation. That is what makes it worth showing an inspector.</p></div>
     <div class="item"><b>Encrypted and locked down</b><p>Everything travels over HTTPS, enforced for a year at a time in the browser itself. The app cannot be framed inside another site, and nothing in it is allowed to appear in a search engine.</p></div>
     <div class="item"><b>Backed up daily</b><p>The database is backed up every day on managed infrastructure, so a mistake is a restore rather than a rebuild.</p></div>
     <div class="item"><b>Keys stay server side</b><p>No privileged key is ever sent to a browser. The scheduled jobs that send the Monday digest carry their own secret and can do nothing else.</p></div>
+    <div class="item"><b>Sign-in takes itself seriously</b><p>Passwords are handled by the platform&rsquo;s authentication system and never pass through Staffbook&rsquo;s own code. Multi-factor authentication is there for every account, and the sealed section asks for the password again even inside a signed-in session.</p></div>
   </div>
 
   <h2>Where it runs</h2>
   <div>
     <div class="item"><p style="margin-top:0">Staffbook runs on Vercel and Supabase, large managed platforms, and your data stays in the UK. Alert emails go through Resend from EU infrastructure. When you leave, your data is exported to you and deleted, in the same month you leave.</p></div>
+    <div class="item"><p style="margin-top:0">The data processing agreement comes first, before any data moves: it is the opening document of onboarding, not an afterthought. The authorised sub-processor list lives in it, and if that list ever changes you hear about it in advance.</p></div>
     <div class="item"><p style="margin-top:0">Staffbook is built in Manchester, and the person who answers a data question is the person who wrote the code. Staffbook Ltd is registered in England and Wales, company no. 17402902. ICO registration: ZC227838. The plain-English version of what is held and why is the <a href="/privacy/" style="font-weight:600;border-bottom:1px solid #0D5C45">privacy notice</a>. Data questions go to <a href="mailto:hello@staffbook.co.uk">hello@staffbook.co.uk</a> and get answered by a person.</p></div>
   </div>
 
@@ -78,6 +81,7 @@
     <div class="item"><b>Can staff see each other&rsquo;s records?</b><p>No. A support worker sees their own file, their own tasks and the published rota, and can record a premises check. Everything else needs a manager login, and the sealed records need the Responsible Individual.</p></div>
     <div class="item"><b>What happens when we leave?</b><p>You can leave any month. Your data is exported to you in files a human can read, spreadsheets and the documents themselves, and then deleted.</p></div>
     <div class="item"><b>What does an inspector actually get?</b><p>An evidence pack: one zip for a named person or the whole home, the spreadsheets plus the certificates, with a plain README. Generating it is itself logged, so the handover is on the record too.</p></div>
+    <div class="item"><b>How long are records kept?</b><p>Schedule 4 staff records carry a fifteen-year retention duty, and that duty is the provider&rsquo;s. While you are with Staffbook, everything is held and dated. When you leave, the export is built to BE that record: plain files, complete, readable in fifteen years without us.</p></div>
     <div class="item"><b>Do we need training?</b><p>A manager is working in it the same afternoon. Support workers get a login, see their own list, and tick things off. If anything needs explaining, that is a defect, and you tell the person who can fix it.</p></div>
   </div>
 
