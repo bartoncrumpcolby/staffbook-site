@@ -20,7 +20,9 @@
 <body>
 <main>
   <h1 class="serif">The pack is on its way.</h1>
-  <p>Check your inbox; it should be there inside a minute. If it has not landed in five, look in spam and drag it out, or email <a href="mailto:hello@staffbook.co.uk">hello@staffbook.co.uk</a> and a human sends it by hand.</p>
+  <p id="ok">Check your inbox; it should be there inside a minute. If it has not landed in five, look in spam and drag it out, or email <a href="mailto:hello@staffbook.co.uk">hello@staffbook.co.uk</a> and a human sends it by hand.</p>
+  <p id="failed" hidden>The email did not send from our side. Nothing wrong with your address. Email <a href="mailto:hello@staffbook.co.uk?subject=Staff%20file%20pack">hello@staffbook.co.uk</a> and a human sends the pack by hand.</p>
+  <script>if(location.search.indexOf('failed')>-1){document.getElementById('ok').hidden=true;document.getElementById('failed').hidden=false;document.querySelector('h1').textContent='It did not send.';}</script>
   <p><a href="/">Back to staffbook.co.uk</a></p>
 </main>
 </body>
