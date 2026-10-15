@@ -7,7 +7,7 @@
 <meta name="description" content="Compliance software for children's homes. DBS, training, supervisions, policies and checks: kept in date, chased automatically, ready when Ofsted calls.">
 <link rel="canonical" href="https://staffbook.co.uk/">
 <meta property="og:title" content="Staffbook: the staff compliance platform that keeps you Ofsted ready">
-<meta property="og:description" content="Compliance software for children's homes. Built with a serving RI. No child records, ever.">
+<meta property="og:description" content="Compliance software for children's homes. No child records, ever.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://staffbook.co.uk/">
 <meta property="og:image" content="https://staffbook.co.uk/img/og.png">
@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Staffbook: the staff compliance platform that keeps you Ofsted ready">
-<meta name="twitter:description" content="Compliance software for children's homes. Built with a serving RI. No child records, ever.">
+<meta name="twitter:description" content="Compliance software for children's homes. No child records, ever.">
 <meta name="twitter:image" content="https://staffbook.co.uk/img/og.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -58,8 +58,8 @@
 <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preload" href="/fonts/newsreader-normal-500-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/newsreader-italic-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-italic-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/instrumentsans-normal-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/fonts/fonts.css">
 <script>document.documentElement.classList.add('js')</script>
@@ -95,9 +95,9 @@
   .mobnav{display:none}
   @media(max-width:760px){
     .navlinks{display:none}
-    .mobnav{display:flex;justify-content:center;gap:22px;font-size:13px;font-weight:500;
-      padding:0 20px 10px}
-    .mobnav a{color:#4A483E;padding:8px 2px;margin:-8px -2px}
+    .mobnav{display:flex;flex-wrap:wrap;justify-content:center;gap:0 20px;font-size:13px;font-weight:500;
+      padding:0 20px 4px}
+    .mobnav a{color:#4A483E;padding:14px 2px;white-space:nowrap}
   }
 
   /* verdict chips (data colours) */
@@ -137,9 +137,14 @@
   .capnote a{font-weight:600;border-bottom:1px solid #0D5C45}
 
   details summary::-webkit-details-marker{display:none}
-  details summary{list-style:none;position:relative;padding-right:30px}
-  details summary::after{content:"+";position:absolute;right:4px;top:0;color:#6E6B57;
+  details summary{list-style:none;position:relative;padding:18px 30px 18px 0}
+  details summary::after{content:"+";position:absolute;right:4px;top:18px;color:#6E6B57;
     font-weight:500;font-size:20px;line-height:1}
+  #faq details{padding:0 !important}
+  #faq details p{margin:-6px 0 18px !important}
+  /* a 44px tap area around small links, without moving anything */
+  .hit{position:relative}
+  .hit::after{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:44px;min-height:100%;transform:translateY(-50%)}
   details[open] summary::after{content:"−"}
 
   /* card stack: static by default so the section survives without JS;
@@ -225,8 +230,9 @@
     .chaserow .bad,.chaserow .warn,.chaserow .ok{display:none}
     .cardhead{flex-direction:column;align-items:flex-start;gap:2px}
   }
-  @media(max-width:340px){
-    [style*="grid-template-columns:190px"]{grid-template-columns:1fr !important}
+  @media(max-width:560px){
+    /* label-and-answer rows stack on a phone instead of squeezing the answer into a strip */
+    [style*="grid-template-columns:190px"]{grid-template-columns:1fr !important;gap:6px !important}
   }
   @media(max-width:640px){
     /* staff profile stacks to one column */
@@ -250,7 +256,7 @@
 <!-- NAV -->
 <div class="navbar">
   <nav class="navin" aria-label="Main">
-    <a href="#top" class="wordmark" style="display:flex;align-items:center;gap:9px"><img src="/brand/staffbook-mark.svg" width="22" height="22" alt="">staffbook</a>
+    <a href="#top" class="wordmark hit" style="display:flex;align-items:center;gap:9px"><img src="/brand/staffbook-mark.svg" width="22" height="22" alt="">staffbook</a>
     <div class="navlinks">
       <a href="#product">Product</a>
       <a href="#file">What it holds</a>
@@ -260,8 +266,8 @@
       <a href="/demo/">Watch the tour</a>
     </div>
     <div style="display:flex;align-items:center;gap:12px">
-      <a href="https://app.staffbook.co.uk" style="font-size:14.5px;font-weight:500;color:#21201A;padding:9px 14px">Sign in</a>
-      <a href="#cta" class="pill" style="font-size:14.5px;padding:10px 20px">Book a look</a>
+      <a href="https://app.staffbook.co.uk" class="hit" style="font-size:14.5px;font-weight:500;color:#21201A;padding:9px 14px">Sign in</a>
+      <a href="#cta" class="pill hit" style="font-size:14.5px;padding:10px 20px">Book a look</a>
     </div>
   </nav>
   <nav class="mobnav" aria-label="Sections">
@@ -334,7 +340,7 @@
     </div>
     <div id="hero-pack" hidden class="float-note" style="position:absolute;bottom:24px;left:34px;z-index:3;background:#FFFFFF;border:1px solid #E5E1D3;border-radius:12px;padding:12px 16px;font-size:13px;color:#4A483E;box-shadow:0 16px 36px -16px rgba(46,42,26,.25);display:flex;align-items:center;gap:10px">
       <span class="mono" style="font-size:10.5px;color:#6E6B57">10:05</span>
-      <span><strong>Evidence pack ready</strong>: every date on one PDF</span>
+      <span><strong>Evidence pack ready</strong>: every date in one file</span>
     </div>
   </div>
 </header>
@@ -542,11 +548,11 @@
           </div>
           <div style="border:1px solid #EBEBE8;border-radius:12px;margin-top:12px;overflow:hidden;background:#FFFFFF">
             <div class="cardhead" style="display:flex;justify-content:space-between;align-items:baseline;padding:12px 16px;border-bottom:1px solid #F2F2EF"><span style="font-size:13px;font-weight:700">Recent activity</span><span style="font-size:10.5px;color:#73757B">every change dated, nothing rewritten</span></div>
-            <div id="sp-row" style="display:flex;gap:12px;align-items:baseline;padding:0 16px;border-bottom:1px solid #F2F2EF;font-size:12.5px;max-height:0;opacity:0;overflow:hidden;transition:max-height .45s ease,padding .45s ease,opacity .4s ease .12s;background:#F6FBF4"><span class="mono" style="font-size:10.5px;color:#6E6B57;flex-shrink:0">24 Aug 09:12</span><span>Fire safety refresher booked for Grace</span><span style="margin-left:auto;color:#73757B;font-size:11px">Sarah W</span></div>
-            <div style="display:flex;gap:12px;align-items:baseline;padding:11px 16px;border-bottom:1px solid #F2F2EF;font-size:12.5px"><span class="mono" style="font-size:10.5px;color:#6E6B57;flex-shrink:0">22 Aug 07:00</span><span>Reminder sent: fire safety 158 days over</span><span style="margin-left:auto;color:#73757B;font-size:11px">Staffbook</span></div>
-            <div style="display:flex;gap:12px;align-items:baseline;padding:11px 16px;border-bottom:1px solid #F2F2EF;font-size:12.5px"><span class="mono" style="font-size:10.5px;color:#6E6B57;flex-shrink:0">28 Jul 15:40</span><span>Supervision recorded, signed by both</span><span style="margin-left:auto;color:#73757B;font-size:11px">Sarah W</span></div>
-            <div style="display:flex;gap:12px;align-items:baseline;padding:11px 16px;border-bottom:1px solid #F2F2EF;font-size:12.5px"><span class="mono" style="font-size:10.5px;color:#6E6B57;flex-shrink:0">18 Jul 10:15</span><span>Medication certificate uploaded to her file</span><span style="margin-left:auto;color:#73757B;font-size:11px">Grace E</span></div>
-            <div style="display:flex;gap:12px;align-items:baseline;padding:11px 16px;font-size:12.5px"><span class="mono" style="font-size:10.5px;color:#6E6B57;flex-shrink:0">14 Jul 08:00</span><span>Reminder sent: supervision due in 14 days</span><span style="margin-left:auto;color:#73757B;font-size:11px">Staffbook</span></div>
+            <div id="sp-row" style="display:flex;gap:12px;align-items:baseline;padding:0 16px;border-bottom:1px solid #F2F2EF;font-size:12.5px;max-height:0;opacity:0;overflow:hidden;transition:max-height .45s ease,padding .45s ease,opacity .4s ease .12s;background:#F6FBF4"><span class="mono" style="font-size:10.5px;color:#6E6B57;flex-shrink:0">24 Aug 09:12</span><span>Fire safety refresher booked for Grace</span><span style="margin-left:auto;color:#73757B;font-size:11px;white-space:nowrap">Sarah W</span></div>
+            <div style="display:flex;gap:12px;align-items:baseline;padding:11px 16px;border-bottom:1px solid #F2F2EF;font-size:12.5px"><span class="mono" style="font-size:10.5px;color:#6E6B57;flex-shrink:0">22 Aug 07:00</span><span>Reminder sent: fire safety 158 days over</span><span style="margin-left:auto;color:#73757B;font-size:11px;white-space:nowrap">Staffbook</span></div>
+            <div style="display:flex;gap:12px;align-items:baseline;padding:11px 16px;border-bottom:1px solid #F2F2EF;font-size:12.5px"><span class="mono" style="font-size:10.5px;color:#6E6B57;flex-shrink:0">28 Jul 15:40</span><span>Supervision recorded and signed</span><span style="margin-left:auto;color:#73757B;font-size:11px;white-space:nowrap">Sarah W</span></div>
+            <div style="display:flex;gap:12px;align-items:baseline;padding:11px 16px;border-bottom:1px solid #F2F2EF;font-size:12.5px"><span class="mono" style="font-size:10.5px;color:#6E6B57;flex-shrink:0">18 Jul 10:15</span><span>Medication certificate uploaded to her file</span><span style="margin-left:auto;color:#73757B;font-size:11px;white-space:nowrap">Grace E</span></div>
+            <div style="display:flex;gap:12px;align-items:baseline;padding:11px 16px;font-size:12.5px"><span class="mono" style="font-size:10.5px;color:#6E6B57;flex-shrink:0">14 Jul 08:00</span><span>Reminder sent: supervision due in 14 days</span><span style="margin-left:auto;color:#73757B;font-size:11px;white-space:nowrap">Staffbook</span></div>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:12.5px;color:#73757B">
             <span>16 documents on file</span>
@@ -561,7 +567,7 @@
     </div>
   </div>
   </div>
-  <p class="serif" style="text-align:center;color:#6E6B57;margin:26px 0 0;font-style:italic;font-size:17px">Built for the sector&rsquo;s 3,900 children&rsquo;s homes. Priced per home, monthly rolling, cancel any time.</p>
+  <p class="serif" style="text-align:center;color:#6E6B57;margin:26px 0 0;font-style:italic;font-size:17px">Built for the sector&rsquo;s 4,700 children&rsquo;s homes. Priced per home, monthly rolling, cancel any time.</p>
 </section>
 
 <!-- COMPARISON -->
@@ -654,7 +660,7 @@
           <div class="panelmock">
             <div style="display:flex"><div class="mocktab">Supervisions · Alder Lodge</div></div>
             <div class="mockcard" style="display:flex;flex-direction:column;gap:13px">
-              <div style="font-size:13px;color:#6E6B57;padding-bottom:10px;border-bottom:1px solid #ECECE9">Pattern: every 6 weeks · recorded and signed by both</div>
+              <div style="font-size:13px;color:#6E6B57;padding-bottom:10px;border-bottom:1px solid #ECECE9">Pattern: every 6 weeks · recorded and signed</div>
               <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px"><span><strong>Grace Ellison</strong> · last held 28 July</span><span class="ok">on pattern</span></div>
               <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px"><span><strong>Priya Raman</strong> · last held 4 August</span><span class="ok">next due 21 Sept</span></div>
               <div style="display:flex;justify-content:space-between;align-items:center;font-size:14px"><span><strong>Daniel Mercer</strong> · last held 12 June</span><span class="warn">due this week</span></div>
@@ -706,12 +712,12 @@
             <div style="display:flex"><div class="mocktab" style="background:#0D5C45;color:#F6F4EC">Evidence pack · Alder Lodge</div></div>
             <div class="mockcard" style="display:flex;flex-direction:column;gap:13px">
               <div style="font-size:13px;color:#6E6B57;padding-bottom:10px;border-bottom:1px solid #ECECE9">Compiled Monday 17 August, 09:33. One click, one file.</div>
-              <div style="display:flex;justify-content:space-between;font-size:14px"><span style="display:flex;gap:10px"><span style="color:#1B9E62;font-weight:700">✓</span> Training matrix, all homes</span><span class="mono" style="color:#73757B;font-size:11px">14 pages</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:14px"><span style="display:flex;gap:10px"><span style="color:#1B9E62;font-weight:700">✓</span> DBS register with renewal dates</span><span class="mono" style="color:#73757B;font-size:11px">2 pages</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:14px"><span style="display:flex;gap:10px"><span style="color:#1B9E62;font-weight:700">✓</span> Safer recruitment files, per person</span><span class="mono" style="color:#73757B;font-size:11px">14 sections</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:14px"><span style="display:flex;gap:10px"><span style="color:#1B9E62;font-weight:700">✓</span> Supervision log &amp; policy signatures</span><span class="mono" style="color:#73757B;font-size:11px">6 pages</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:14px"><span style="display:flex;gap:10px"><span style="color:#1B9E62;font-weight:700">✓</span> Training matrix, all homes</span><span class="mono" style="color:#73757B;font-size:11px">sheet</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:14px"><span style="display:flex;gap:10px"><span style="color:#1B9E62;font-weight:700">✓</span> DBS register with renewal dates</span><span class="mono" style="color:#73757B;font-size:11px">sheet</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:14px"><span style="display:flex;gap:10px"><span style="color:#1B9E62;font-weight:700">✓</span> Safer recruitment files, per person</span><span class="mono" style="color:#73757B;font-size:11px">14 folders</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:14px"><span style="display:flex;gap:10px"><span style="color:#1B9E62;font-weight:700">✓</span> Supervision log &amp; policy signatures</span><span class="mono" style="color:#73757B;font-size:11px">sheet</span></div>
               <div style="margin-top:6px;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:#0D5C45;border-radius:10px;color:#F6F4EC">
-                <span style="font-size:14px;font-weight:600">Alder-Lodge-evidence-pack.pdf</span>
+                <span style="font-size:14px;font-weight:600">Alder-Lodge-evidence-pack.zip</span>
                 <span style="font-size:13px;font-weight:600;border:1px solid rgba(246,244,236,.4);border-radius:999px;padding:5px 14px">Download</span>
               </div>
             </div>
@@ -791,7 +797,7 @@
         </div>
         <div style="padding:16px 26px;border-top:1px solid #ECECE9;display:flex;align-items:center;justify-content:space-between;background:#F8F8F7">
           <span style="font-size:13.5px;color:#5C594B">12 documents on file</span>
-          <a href="#cta" style="font-size:14px;font-weight:600">View evidence pack&nbsp;→</a>
+          <span style="font-size:14px;font-weight:600;color:#0D5C45">View evidence pack&nbsp;→</span>
         </div>
       </div>
     </div>
@@ -801,9 +807,8 @@
 <!-- BUILT FOR THE SECTOR -->
 <section style="background:#123A2D;padding:96px clamp(20px,4vw,40px) 110px;color:#EDF1E6">
   <div style="max-width:1140px;margin:0 auto">
-    <p class="mono" style="font-size:12px;letter-spacing:.1em;color:#8FBCA4;margin:0">WHY IT FEELS RIGHT</p>
-    <h2 class="serif rv" style="font-size:clamp(34px,5.5vw,58px);letter-spacing:-.02em;margin:18px 0 0;max-width:760px;line-height:1.05;color:#FBFAF5">Built inside children&rsquo;s homes, not adapted to them.</h2>
-    <p class="rv" style="font-size:17px;color:#B9CDB9;margin:24px 0 0;max-width:560px;line-height:1.6;text-wrap:pretty">Staffbook is not HR software with the names changed. It was built alongside a serving Responsible Individual with twenty years in children&rsquo;s homes. The screens answer what inspections actually ask, because she kept asking.</p>
+    <h2 class="serif rv" style="font-size:clamp(34px,5.5vw,58px);letter-spacing:-.02em;margin:0;max-width:760px;line-height:1.05;color:#FBFAF5">Built inside children&rsquo;s homes, not adapted to them.</h2>
+    <p class="rv" style="font-size:17px;color:#B9CDB9;margin:24px 0 0;max-width:560px;line-height:1.6;text-wrap:pretty">Staffbook is not HR software with the names changed. The screens answer what inspections actually ask.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:40px;margin-top:64px">
       <div class="rv" style="border-top:1px solid rgba(251,250,245,.25);padding-top:22px">
         <div style="font-size:17px;font-weight:700;color:#FBFAF5">The rota, painted, not typed.</div>
@@ -837,10 +842,9 @@
 <section id="included" style="background:#FFFFFF;padding:110px clamp(20px,4vw,40px) 110px">
   <div style="max-width:1220px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:48px;align-items:start">
     <div>
-      <p class="mono" style="font-size:12px;letter-spacing:.1em;color:#0D5C45;margin:0">WHAT IS INCLUDED</p>
-      <h2 class="serif rv" style="font-size:clamp(32px,5vw,52px);letter-spacing:-.02em;margin:18px 0 0;line-height:1.05">What comes with it.</h2>
+      <h2 class="serif rv" style="font-size:clamp(32px,5vw,52px);letter-spacing:-.02em;margin:0;line-height:1.05">What comes with it.</h2>
       <p class="rv" style="font-size:16.5px;color:#5C594B;margin:22px 0 0;line-height:1.6;text-wrap:pretty">Every home gets the same. Nothing is an add-on.</p>
-      <a href="#cta" class="rv" style="display:inline-block;margin-top:22px;font-size:15px;font-weight:600;border-bottom:2px solid #0D5C45;padding-bottom:2px">Book a call →</a>
+      <a href="#cta" class="rv hit" style="display:inline-block;margin-top:22px;font-size:15px;font-weight:600;border-bottom:2px solid #0D5C45;padding-bottom:2px">Book a call →</a>
     </div>
     <div style="border-top:1px solid #D8D4C2">
       <div style="display:grid;grid-template-columns:190px 1fr;gap:20px;padding:22px 8px;border-bottom:1px solid #D8D4C2;align-items:baseline">
@@ -890,12 +894,12 @@
         <span style="font-size:12.5px;font-weight:600;color:#4A483E;border:1px solid #D8D4C2;border-radius:999px;padding:6px 13px;background:#FFFFFF">No child records</span>
         <span style="font-size:12.5px;font-weight:600;color:#4A483E;border:1px solid #D8D4C2;border-radius:999px;padding:6px 13px;background:#FFFFFF">Export any time</span>
       </div>
-      <a href="/compliance/" class="rv" style="display:inline-block;margin-top:22px;font-size:15px;font-weight:600;border-bottom:2px solid #0D5C45;padding-bottom:2px">The detailed version, written for your DPO →</a>
+      <a href="/compliance/" class="rv hit" style="display:inline-block;margin-top:22px;font-size:15px;font-weight:600;border-bottom:2px solid #0D5C45;padding-bottom:2px">The detailed version, written for your DPO →</a>
     </div>
     <div style="border-top:1px solid #D8D4C2">
       <div style="display:grid;grid-template-columns:190px 1fr;gap:20px;padding:22px 8px;border-bottom:1px solid #D8D4C2;align-items:baseline">
         <div style="font-size:15.5px;font-weight:700">UK-hosted</div>
-        <p style="font-size:14.5px;color:#5C594B;line-height:1.55;margin:0">Held and processed in the UK, end to end.</p>
+        <p style="font-size:14.5px;color:#5C594B;line-height:1.55;margin:0">Held in the UK.</p>
       </div>
       <div style="display:grid;grid-template-columns:190px 1fr;gap:20px;padding:22px 8px;border-bottom:1px solid #D8D4C2;align-items:baseline">
         <div style="font-size:15.5px;font-weight:700">Walled off</div>
@@ -936,7 +940,7 @@
       </details>
       <details style="border-bottom:1px solid #D8D4C2;padding:18px 0">
         <summary style="font-size:16.5px;font-weight:600;cursor:pointer;color:#21201A">Will Ofsted accept it?</summary>
-        <p style="font-size:15px;color:#5C594B;line-height:1.6;margin:12px 0 0">The evidence pack is the same records you&rsquo;d show from folders: dated, signed and in one PDF, minus the scramble to assemble them. Staffbook is a way to keep and show your records. It does not change what Ofsted asks for.</p>
+        <p style="font-size:15px;color:#5C594B;line-height:1.6;margin:12px 0 0">The evidence pack is the same records you&rsquo;d show from folders: dated, signed and in one download, minus the scramble to assemble them. Staffbook is a way to keep and show your records. It does not change what Ofsted asks for.</p>
       </details>
       <details style="padding:18px 0">
         <summary style="font-size:16.5px;font-weight:600;cursor:pointer;color:#21201A">We run more than one home.</summary>
@@ -962,7 +966,7 @@
     <p style="margin:10px 0 0;font-size:13.5px;color:#5C594B;line-height:1.6">Colby will also reply to your email today.</p>
     <a href="https://calendar.app.google/ZttqPb2fvUJPDG2o7" target="_blank" rel="noopener" class="pill" style="display:inline-block;margin-top:16px;font-size:15px;padding:13px 26px">Book the fifteen minutes</a>
   </div>
-  <p style="margin:22px 0 0;font-size:14.5px"><a href="/pack/" style="font-weight:600;border-bottom:1px solid #0D5C45">Not ready to talk? Get the free pack &rarr;</a></p>
+  <p style="margin:22px 0 0;font-size:14.5px"><a href="/pack/" class="hit" style="font-weight:600;border-bottom:1px solid #0D5C45">Not ready to talk? Get the free pack &rarr;</a></p>
 </section>
 
 <!-- FOOTER -->
@@ -975,13 +979,13 @@
       <span>· Compliance software for children&rsquo;s homes</span>
     </div>
     <div style="display:flex;gap:24px;flex-wrap:wrap">
-      <a href="/pack/" style="color:#5C594B">Free pack</a>
-      <a href="/privacy/" style="color:#5C594B">Privacy</a>
-      <a href="/compliance/" style="color:#5C594B">Security</a>
-      <a href="resources/safer-recruitment-checklist.html" style="color:#5C594B">Safer recruitment checklist</a>
-      <a href="https://app.staffbook.co.uk" style="color:#5C594B">Sign in</a>
-      <a href="https://www.linkedin.com/company/staffbook-uk/" style="color:#5C594B">LinkedIn</a>
-      <a href="mailto:hello@staffbook.co.uk" style="color:#5C594B">hello@staffbook.co.uk</a>
+      <a href="/pack/" class="hit" style="color:#5C594B">Free pack</a>
+      <a href="/privacy/" class="hit" style="color:#5C594B">Privacy</a>
+      <a href="/compliance/" class="hit" style="color:#5C594B">Security</a>
+      <a href="/resources/safer-recruitment-checklist/" class="hit" style="color:#5C594B">Safer recruitment checklist</a>
+      <a href="https://app.staffbook.co.uk" class="hit" style="color:#5C594B">Sign in</a>
+      <a href="https://www.linkedin.com/company/staffbook-uk/" class="hit" style="color:#5C594B">LinkedIn</a>
+      <a href="mailto:hello@staffbook.co.uk" class="hit" style="color:#5C594B">hello@staffbook.co.uk</a>
     </div>
   </div>
   <div style="max-width:1220px;margin:0 auto;padding:0 clamp(20px,4vw,40px) 32px;font-size:12.5px;color:#6E6B57">Staffbook Ltd, registered in England and Wales, company no. 17402902 · 82A James Carter Road, Mildenhall IP28 7DE · ICO registration: ZC227838 · UK-hosted.</div>

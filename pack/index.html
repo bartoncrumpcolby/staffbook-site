@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The free staff file pack for children's homes | Staffbook</title>
-<meta name="description" content="A free training matrix that colours its own expiries, the Schedule 2 staff file checklist, the employment gap worksheet and the inspection self-audit. No sign-up needed.">
+<meta name="description" content="A free training matrix that colours its own expiries, the Schedule 2 staff file checklist, the employment gap worksheet and the inspection self-audit. Free to keep, copy and share.">
 <link rel="canonical" href="https://staffbook.co.uk/pack/">
 <meta property="og:title" content="The free staff file pack, from Staffbook">
 <meta property="og:description" content="The training matrix, the Schedule 2 checklist, the gap worksheet and the inspection self-audit. Free to keep, copy and share.">
@@ -14,13 +14,15 @@
 <meta property="og:site_name" content="Staffbook">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/brand/staffbook-favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/fonts/fonts.css">
 <style>
   *{box-sizing:border-box;margin:0}
   body{font-family:'Instrument Sans','Helvetica Neue',sans-serif;color:#21201A;background:#F6F4EC;line-height:1.55}
   .serif{font-family:'Newsreader',Georgia,serif;font-weight:500}
+  a{color:#0D5C45}
   main{max-width:760px;margin:0 auto;padding:64px 24px 96px}
-  .eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#0D5C45;font-weight:700;margin-bottom:14px}
   h1{font-size:clamp(34px,6vw,54px);letter-spacing:-.02em;line-height:1.04;margin-bottom:18px}
   .lede{font-size:18px;color:#4A4737;max-width:56ch}
   .card{background:#FBFAF5;border:1px solid #DDD9C8;border-radius:16px;padding:26px 28px;margin-top:26px}
@@ -39,12 +41,14 @@
   .hp{position:absolute;left:-9999px}
   .foot{margin-top:56px;font-size:13px;color:#6E6B57}
   .foot a{color:#0D5C45}
+  /* a 44px tap area around small links, without moving anything */
+  .hit{position:relative}
+  .hit::after{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:44px;min-height:100%;transform:translateY(-50%)}
   .gap-callout{border-left:3px solid #B4232A;padding:10px 16px;background:#FBF1EF;border-radius:0 10px 10px 0;font-size:15px;color:#4A4737;margin-top:18px}
 </style>
 </head>
 <body>
 <main>
-  <p class="eyebrow">Free, from Staffbook</p>
   <h1 class="serif">The staff file pack every children's home should already have.</h1>
   <p class="lede">The spreadsheets and checklists that get a home ready for inspection. Built properly. Free to keep, copy and share. Tell us where to send it and it lands in your inbox in a minute.</p>
 
@@ -52,7 +56,7 @@
     <h2 class="serif">What you get</h2>
     <p><strong>The workbook.</strong> Ten tabs that do real work by themselves:</p>
     <img src="/pack/annex-a-preview.jpg" alt="The Annex A staffing tab, filled in: each of Ofsted's staffing questions with its answer worked out from the staff list" width="1175" height="600" style="width:100%;height:auto;border:1px solid #DDD9C8;border-radius:10px;margin:14px 0 18px" loading="lazy">
-      <p class="note"><a href="/pack/annex-a-preview.jpg">Open the preview full size</a></p>
+      <p class="note"><a href="/pack/annex-a-preview.jpg" class="hit">Open the preview full size</a></p>
       <ul>
       <li><strong>The Annex A staffing answers</strong>. Ofsted asks for exact staffing numbers on notice of a full inspection: new starters and leavers, agency shifts and agency people, part time, level 3, regulation 32, first aid, vacancies. Type your staff list once and Section 7 answers itself, question by question under the form's own numbers (form of 1 April 2026).</li>
         <li><strong>Training matrix</strong> with instant answers. Type the date a course was done and the cell next to it fills in the expiry and turns green, amber or red by itself.</li>
@@ -90,7 +94,7 @@
     <p>It is free because every home needs it and most homes are too busy to build it.</p>
   </div>
 
-  <p class="foot">Staffbook Ltd · <a href="/">staffbook.co.uk</a> · <a href="/privacy/">privacy</a> · No child records, ever, by design.</p>
+  <p class="foot">Staffbook Ltd · <a href="/" class="hit">staffbook.co.uk</a> · <a href="/privacy/" class="hit">privacy</a> · No child records, ever, by design.</p>
 </main>
 </body>
 </html>

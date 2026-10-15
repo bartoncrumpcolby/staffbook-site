@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>A ninety second tour | Staffbook</title>
-<meta name="description" content="The staff compliance platform that keeps children's homes inspection ready. Ninety seconds, introduced by a serving Responsible Individual.">
+<meta name="description" content="A short video tour of Staffbook, the staff compliance platform that keeps children's homes inspection ready.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://staffbook.co.uk/demo/">
 <meta property="og:title" content="A ninety second tour of Staffbook">
@@ -15,18 +15,19 @@
 <meta property="og:site_name" content="Staffbook">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/brand/staffbook-favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/fonts/fonts.css">
 <style>
   *{box-sizing:border-box;margin:0}
   body{font-family:'Instrument Sans','Helvetica Neue',sans-serif;color:#21201A;background:#F6F4EC;line-height:1.55}
   .serif{font-family:'Newsreader',Georgia,serif;font-weight:500}
   main{max-width:860px;margin:0 auto;padding:56px 24px 96px}
-  .eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#0D5C45;font-weight:700;margin-bottom:14px}
   .madefor{display:none;font-size:14px;font-weight:700;color:#F6F4EC;background:#0B3B2C;border-radius:999px;padding:8px 18px;margin-bottom:18px}
   h1{font-size:clamp(30px,5vw,46px);letter-spacing:-.02em;line-height:1.08;margin-bottom:14px}
   .lede{font-size:17.5px;color:#4A4737;max-width:58ch;margin-bottom:28px}
   .player{border-radius:18px;overflow:hidden;background:#0B3B2C;box-shadow:0 24px 60px rgba(11,59,44,.18);line-height:0}
-  .player video{width:100%;height:auto}
+  .player video{width:100%;height:auto;aspect-ratio:16/9}
   .after{margin-top:30px}
   .after p{font-size:17px;color:#4A4737;margin-bottom:18px}
   .btn{display:inline-block;font:inherit;font-size:16px;font-weight:600;background:#0D5C45;color:#F6F4EC;border:none;border-radius:999px;padding:14px 26px;cursor:pointer;text-decoration:none}
@@ -35,17 +36,17 @@
   .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .note{font-size:13px;color:#6E6B57;margin-top:12px}
   .foot{margin-top:56px;font-size:13px;color:#6E6B57}
-  .foot a{color:#0D5C45}
+  .foot a{color:#0D5C45;position:relative}
+  .foot a::after{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:44px;transform:translateY(-50%)}
 </style>
 </head>
 <body>
 <main>
   <p class="madefor" id="madefor"></p>
-  <p class="eyebrow">A ninety second tour</p>
   <h1 class="serif">The staff compliance platform that keeps you inspection ready.</h1>
 
   <div class="player" style="margin-top:26px">
-    <video controls preload="metadata" poster="/demo/poster.png">
+    <video controls preload="metadata" poster="/demo/poster.png" width="1920" height="1080">
       <source src="/demo/staffbook-demo.mp4" type="video/mp4">
     </video>
   </div>

@@ -48,6 +48,9 @@
   .factbox p{margin:6px 0 0;font-size:14.5px}
   .factbox p:first-child{margin-top:0}
   .pending{color:#77745F;font-style:normal}
+  /* a 44px tap area around small links, without moving anything */
+  .hit{position:relative}
+  .hit::after{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:44px;min-height:100%;transform:translateY(-50%)}
   footer{border-top:1px solid #D8D4C2;margin-top:80px}
   .fin{max-width:1220px;margin:0 auto;padding:32px clamp(20px,4vw,40px);
     display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
@@ -58,8 +61,8 @@
 
 <div class="navbar">
   <nav class="navin" aria-label="Main">
-    <a href="/" class="wordmark">staffbook</a>
-    <a href="/" style="font-size:14.5px;font-weight:500;color:#4A483E">← staffbook.co.uk</a>
+    <a href="/" class="wordmark hit">staffbook</a>
+    <a href="/" class="hit" style="font-size:14.5px;font-weight:500;color:#4A483E">← staffbook.co.uk</a>
   </nav>
 </div>
 
@@ -164,8 +167,8 @@
     <span><span style="font-weight:700;letter-spacing:-.03em;color:#21201A;font-size:15px">staffbook</span>
     &nbsp;· Compliance software for children&rsquo;s homes</span>
     <span style="display:flex;gap:24px;flex-wrap:wrap">
-      <a href="/compliance/" style="color:#5C594B">Security</a>
-      <a href="mailto:hello@staffbook.co.uk" style="color:#5C594B">hello@staffbook.co.uk</a>
+      <a href="/compliance/" class="hit" style="color:#5C594B">Security</a>
+      <a href="mailto:hello@staffbook.co.uk" class="hit" style="color:#5C594B">hello@staffbook.co.uk</a>
     </span>
   </div>
 </footer>
