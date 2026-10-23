@@ -1,4 +1,1 @@
-# GitHub Pages builds this site with Jekyll. Keep working files off the
-# public site: the old landing-page handoff is a design artefact, not a page.
-exclude:
-  - design_handoff_staffbook_landing
+# GitHub Pages builds this site with Jekyll.

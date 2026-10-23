@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A ninety second tour | Staffbook</title>
+<title>A short tour | Staffbook</title>
 <meta name="description" content="A short video tour of Staffbook, the staff compliance platform that keeps children's homes inspection ready.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://staffbook.co.uk/demo/">
-<meta property="og:title" content="A ninety second tour of Staffbook">
+<meta property="og:title" content="A short tour of Staffbook">
 <meta property="og:description" content="The staff compliance platform that keeps you inspection ready.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://staffbook.co.uk/demo/">
@@ -52,10 +52,10 @@
   </div>
 
   <div class="after">
-    <p>Your first home is free for a month. Monthly rolling, cancel any month, nothing paywalled.</p>
+    <p>Try it free on one of your homes for a month. Monthly rolling. Cancel any month. Take all your data with you.</p>
     <div class="row">
-      <a class="btn" href="mailto:hello@staffbook.co.uk?subject=Book%20a%20call%20about%20Staffbook">Book a call</a>
-      <a class="btn ghost" href="https://app.staffbook.co.uk/demo">Try the demo</a>
+      <a class="btn" href="https://calendar.app.google/ZttqPb2fvUJPDG2o7">Book a call</a>
+      <a class="btn ghost" href="https://app.staffbook.co.uk/demo">Click around a demo home</a>
       <a class="btn ghost" href="/">See the whole site</a>
     </div>
   </div>
@@ -64,12 +64,18 @@
 </main>
 <script>
   // The email thumbnails link here with ?for=<org-slug>; the pill greets
-  // the organisation by name. Unknown or missing slugs just show the page.
+  // the organisation by name. orgs.json is keyed by the SHA-256 of the slug,
+  // so the list of names is not readable. Unknown slugs just show the page.
   (function () {
     var slug = new URLSearchParams(location.search).get('for');
     if (!slug) return;
-    fetch('/demo/orgs.json').then(function (r) { return r.json(); }).then(function (map) {
-      var name = map[slug];
+    if (!window.crypto || !crypto.subtle) return;
+    var key;
+    crypto.subtle.digest('SHA-256', new TextEncoder().encode(slug)).then(function (buf) {
+      key = Array.prototype.map.call(new Uint8Array(buf), function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
+      return fetch('/demo/orgs.json');
+    }).then(function (r) { return r.json(); }).then(function (map) {
+      var name = map[key];
       if (!name) return;
       var el = document.getElementById('madefor');
       el.textContent = 'Made for ' + name;

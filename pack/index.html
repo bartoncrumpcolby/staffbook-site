@@ -45,12 +45,21 @@
   .hit{position:relative}
   .hit::after{content:"";position:absolute;left:-4px;right:-4px;top:50%;height:44px;min-height:100%;transform:translateY(-50%)}
   .gap-callout{border-left:3px solid #B4232A;padding:10px 16px;background:#FBF1EF;border-radius:0 10px 10px 0;font-size:15px;color:#4A4737;margin-top:18px}
+  .navbar{position:sticky;top:0;z-index:60;background:rgba(246,244,236,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(216,212,194,.55)}
+  .navin{display:flex;align-items:center;justify-content:space-between;max-width:760px;margin:0 auto;padding:14px clamp(20px,4vw,40px)}
+  .navin a{text-decoration:none}
 </style>
 </head>
 <body>
+<div class="navbar">
+  <nav class="navin" aria-label="Main">
+    <a href="/" class="hit" style="font-size:20px;font-weight:700;letter-spacing:-.03em;color:#21201A;display:flex;align-items:center;gap:8px"><img src="/brand/staffbook-mark.svg" width="20" height="20" alt="">staffbook</a>
+    <a href="/#cta" class="hit" style="background:#0D5C45;color:#F6F4EC;font-weight:600;border-radius:999px;font-size:14px;padding:9px 18px">Book a look</a>
+  </nav>
+</div>
 <main>
   <h1 class="serif">The staff file pack every children's home should already have.</h1>
-  <p class="lede">The spreadsheets and checklists that get a home ready for inspection. Built properly. Free to keep, copy and share. Tell us where to send it and it lands in your inbox in a minute.</p>
+  <p class="lede">Free to keep, copy and share.</p>
 
   <div class="card">
     <h2 class="serif">What you get</h2>
