@@ -64,22 +64,30 @@
 </main>
 <script>
   // The email thumbnails link here with ?for=<org-slug>; the pill greets
-  // the organisation by name. orgs.json is keyed by the SHA-256 of the slug,
-  // so the list of names is not readable. Unknown slugs just show the page.
+  // the organisation by name. orgs.json is keyed by the SHA-256 of the slug
+  // and each name is AES-GCM encrypted with a key derived from the slug, so
+  // the file shows no names without the link. Unknown slugs just show the page.
   (function () {
     var slug = new URLSearchParams(location.search).get('for');
-    if (!slug) return;
-    if (!window.crypto || !crypto.subtle) return;
-    var key;
-    crypto.subtle.digest('SHA-256', new TextEncoder().encode(slug)).then(function (buf) {
-      key = Array.prototype.map.call(new Uint8Array(buf), function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
-      return fetch('/demo/orgs.json');
-    }).then(function (r) { return r.json(); }).then(function (map) {
-      var name = map[key];
-      if (!name) return;
-      var el = document.getElementById('madefor');
-      el.textContent = 'Made for ' + name;
-      el.style.display = 'inline-block';
+    if (!slug || !window.crypto || !crypto.subtle || !window.TextEncoder) return;
+    var te = new TextEncoder(), raw = te.encode(slug);
+    var hex = function (buf) { return Array.prototype.map.call(new Uint8Array(buf), function (b) { return ('0' + b.toString(16)).slice(-2); }).join(''); };
+    Promise.all([
+      crypto.subtle.digest('SHA-256', raw),
+      fetch('/demo/orgs.json').then(function (r) { return r.json(); })
+    ]).then(function (got) {
+      var blob = got[1][hex(got[0])];
+      if (!blob) return;
+      var bytes = Uint8Array.from(atob(blob), function (c) { return c.charCodeAt(0); });
+      return crypto.subtle.importKey('raw', raw, 'HKDF', false, ['deriveKey']).then(function (ikm) {
+        return crypto.subtle.deriveKey({ name: 'HKDF', hash: 'SHA-256', salt: te.encode('staffbook-demo-greeting-v1'), info: te.encode('name') }, ikm, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+      }).then(function (key) {
+        return crypto.subtle.decrypt({ name: 'AES-GCM', iv: bytes.slice(0, 12) }, key, bytes.slice(12));
+      }).then(function (plain) {
+        var el = document.getElementById('madefor');
+        el.textContent = 'Made for ' + new TextDecoder().decode(plain);
+        el.style.display = 'inline-block';
+      });
     }).catch(function () {});
   })();
   window.goatcounter = { path: function () { return location.pathname + location.search; } };
